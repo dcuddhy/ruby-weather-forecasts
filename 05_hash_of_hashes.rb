@@ -205,5 +205,13 @@ forecast = [
 ]
 
 #----- Put your code below here -----
+forecast.each do |dow|
+  collection=[]
+    dow["temperatures"].each do |time, temp|
+     collection << temp
+    end
+    puts "#{dow["day"]}: High of #{collection.max}, Low of #{collection.min}"
+end
+
 
 # http://www.ruby-doc.org/core-2.1.5/Hash.html#method-i-values
